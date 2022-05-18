@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { toast } from "react-toastify";
 import Todos from "./Todos";
 
 const Todo = () => {
@@ -21,9 +22,11 @@ const Todo = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        //console.log(data)
+        toast("Added Successfully!");
       });
   };
+
   return (
     <div className="container">
       <div className="w-75 mx-auto my-5 border p-3 rounded">
@@ -59,6 +62,7 @@ const Todo = () => {
           </div>
         </form>
       </div>
+
       <Todos />
     </div>
   );
