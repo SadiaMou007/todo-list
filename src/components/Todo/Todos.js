@@ -46,27 +46,29 @@ const Todos = () => {
               <th scope="col-4">DETAIL</th>
             </tr>
           </thead>
-          {todo?.map((item, index) => (
-            <tr>
-              <td class="myElement">{item.name}</td>
-              <td class="myElement">{item.detail}</td>
-              <td className="d-flex justify-content-center align-items-center py-2">
-                {" "}
-                <button
-                  className="btn btn-outline-success me-2"
-                  onClick={() => handleComplete(index)}
-                >
-                  COMPLETED
-                </button>
-                <button
-                  className="btn btn-outline-danger"
-                  onClick={() => handleDelete(item._id)}
-                >
-                  DELETE
-                </button>
-              </td>
-            </tr>
-          ))}
+          <tbody>
+            {todo?.map((item, index) => (
+              <tr>
+                <td class="myElement">{item.name}</td>
+                <td class="myElement">{item.detail}</td>
+                <td className="d-flex justify-content-center align-items-center py-2">
+                  {" "}
+                  <button
+                    className="btn btn-outline-success me-2"
+                    onClick={() => handleComplete(index)}
+                  >
+                    COMPLETED
+                  </button>
+                  <button
+                    className="btn btn-outline-danger"
+                    onClick={() => handleDelete(item._id)}
+                  >
+                    DELETE
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
       </div>
     </div>
