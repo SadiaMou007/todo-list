@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import Todos from "./Todos";
 
 const Todo = () => {
   const nameRef = useRef("");
@@ -7,8 +8,21 @@ const Todo = () => {
     e.preventDefault();
     const name = nameRef.current.value;
     const detail = detailRef.current.value;
-
-    console.log(name, detail);
+    const todo = {
+      name,
+      detail,
+    };
+    fetch("http://localhost:5000/todo", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(todo),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <div className="container">
@@ -45,6 +59,7 @@ const Todo = () => {
           </div>
         </form>
       </div>
+      <Todos />
     </div>
   );
 };

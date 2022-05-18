@@ -12,7 +12,7 @@ const NavBar = () => {
     signOut(auth);
   };
   return (
-    <nav className="px-5 bg-light d-flex justify-content-between align-items-center w-100 py-2">
+    <nav className="sticky top-0 px-5 bg-light d-flex justify-content-between align-items-center w-100 py-2">
       <div className="w-25">
         {" "}
         <h4 className="brand my-auto text-info">MY TODO LIST</h4>
